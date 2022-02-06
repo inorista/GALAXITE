@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "498754552424",
+    "project_id": "galaxite-c036a",
+    "storage_bucket": "galaxite-c036a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498754552424:android:009f5d236b742e6e74f1dd",
+        "android_client_info": {
+          "package_name": "com.example.galaxyite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498754552424-mpipqgrg14h5qcsjra29l1pa7gfc3no4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkkWoImXVh4iLSmPEVZFwnYYCpvSYN5Oc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498754552424-mpipqgrg14h5qcsjra29l1pa7gfc3no4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
