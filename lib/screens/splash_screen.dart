@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:travel/constants/textstyle.dart';
+import 'package:travel/screens/admin_screen.dart';
 import 'package:travel/screens/main_screen.dart';
 import 'package:travel/service_screens/login_screen.dart';
 
@@ -17,16 +19,29 @@ class _SplashScreenState extends State<SplashScreen> {
       (user) {
         //////CHECK IF USER IS LOGGED IN -> HOMEPAGE
         if (user != null) {
-          Navigator.push(
-            context,
-            PageTransition(
-              type: PageTransitionType.rightToLeft,
-              curve: Curves.easeInOut,
-              reverseDuration: Duration(milliseconds: 800),
-              duration: Duration(milliseconds: 800),
-              child: Home(),
-            ),
-          );
+          if (user.email == "ngoquoctu122@gmail.com") {
+            Navigator.push(
+              context,
+              PageTransition(
+                type: PageTransitionType.rightToLeft,
+                curve: Curves.easeInOut,
+                reverseDuration: Duration(milliseconds: 800),
+                duration: Duration(milliseconds: 800),
+                child: AdminPage(),
+              ),
+            );
+          } else {
+            Navigator.push(
+              context,
+              PageTransition(
+                type: PageTransitionType.rightToLeft,
+                curve: Curves.easeInOut,
+                reverseDuration: Duration(milliseconds: 800),
+                duration: Duration(milliseconds: 800),
+                child: Home(),
+              ),
+            );
+          }
         }
         //////CHECK IF USER IS NOT LOGGED IN -> LOGINPAGE.
         else if (user == null) {
@@ -64,9 +79,9 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Center(
-            child: Image.asset(
-              "assets/images/logo2.png",
-              width: 240,
+            child: Text(
+              "GALAXITE",
+              style: kStyleSplashScreen,
             ),
           ),
           /*Positioned(

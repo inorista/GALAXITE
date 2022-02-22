@@ -93,8 +93,7 @@ class _SignupPageState extends State<SignupPage> {
                     children: [
                       Container(
                         padding: EdgeInsets.all(30),
-                        child:
-                            Text("Đăng Ký Tài Khoản Mới", style: kStyleLogText),
+                        child: Text("Đăng Ký Tài Khoản Mới", style: kStyleLogText),
                       ),
                       AnimatedContainer(
                         padding: EdgeInsets.only(top: 14, bottom: 14),
@@ -105,9 +104,7 @@ class _SignupPageState extends State<SignupPage> {
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
                             width: borderWidth ? 1.5 : 1,
-                            color: borderColor
-                                ? Color(0xff3D2946)
-                                : Color(0xff8c8c8c),
+                            color: borderColor ? Color(0xff3D2946) : Color(0xff8c8c8c),
                           ),
                         ),
                         child: Row(
@@ -169,9 +166,7 @@ class _SignupPageState extends State<SignupPage> {
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
                             width: borderWidthPassword ? 1.5 : 1,
-                            color: borderColorPassword
-                                ? Color(0xff3D2946)
-                                : Color(0xff8c8c8c),
+                            color: borderColorPassword ? Color(0xff3D2946) : Color(0xff8c8c8c),
                           ),
                         ),
                         child: Row(
@@ -227,8 +222,7 @@ class _SignupPageState extends State<SignupPage> {
                       GestureDetector(
                         onTap: () {
                           final String email = emailController.text.trim();
-                          final String password =
-                              passwordController.text.trim();
+                          final String password = passwordController.text.trim();
                           if (email.isEmpty & password.isEmpty) {
                             showErrorSnackBar(
                               "Email và Password không được để trống",
@@ -250,8 +244,7 @@ class _SignupPageState extends State<SignupPage> {
                         },
                         child: AnimatedContainer(
                           padding: EdgeInsets.only(top: 14, bottom: 14),
-                          margin:
-                              EdgeInsets.only(left: 40, right: 40, top: 120),
+                          margin: EdgeInsets.only(left: 40, right: 40, top: 120),
                           width: width,
                           duration: Duration(milliseconds: 800),
                           decoration: BoxDecoration(
@@ -312,22 +305,19 @@ class _SignupPageState extends State<SignupPage> {
 
   ///////SIGIN FUNC
   Future<UserCredential> signUp(String email, String password, context) async {
-    FirebaseApp app = await Firebase.initializeApp(
-        name: 'Secondary', options: Firebase.app().options);
+    FirebaseApp app = await Firebase.initializeApp(name: 'Secondary', options: Firebase.app().options);
     try {
       /*await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
       */
-      UserCredential userCredential = await FirebaseAuth.instanceFor(app: app)
-          .createUserWithEmailAndPassword(email: email, password: password);
+      UserCredential userCredential =
+          await FirebaseAuth.instanceFor(app: app).createUserWithEmailAndPassword(email: email, password: password);
       showSuccessSnackBar("Đăng ký tài khoản thành công !!", context);
       await Future.delayed(Duration(seconds: 5));
     } catch (e) {
-      if (e.toString().indexOf(
-              "The email address is already in use by another account.") !=
-          -1) {
+      if (e.toString().indexOf("The email address is already in use by another account.") != -1) {
         showErrorSnackBar("Email đã được đăng ký trước đó.", context);
       }
       if (e.toString().indexOf("The email address is badly formatted.") != -1) {

@@ -94,8 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       Container(
                         padding: EdgeInsets.all(30),
-                        child:
-                            Text("Đăng Nhập Để Tiếp Tục", style: kStyleLogText),
+                        child: Text("Đăng Nhập Để Tiếp Tục", style: kStyleLogText),
                       ),
                       AnimatedContainer(
                         padding: EdgeInsets.only(top: 14, bottom: 14),
@@ -106,9 +105,7 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
                             width: borderWidth ? 1.5 : 1,
-                            color: borderColor
-                                ? Color(0xff3e4680)
-                                : Color(0xff8c8c8c),
+                            color: borderColor ? Color(0xff3e4680) : Color(0xff8c8c8c),
                           ),
                         ),
                         child: Row(
@@ -170,9 +167,7 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
                             width: borderWidthPassword ? 1.5 : 1,
-                            color: borderColorPassword
-                                ? Color(0xff3e4680)
-                                : Color(0xff8c8c8c),
+                            color: borderColorPassword ? Color(0xff3e4680) : Color(0xff8c8c8c),
                           ),
                         ),
                         child: Row(
@@ -239,11 +234,9 @@ class _LoginPageState extends State<LoginPage> {
                                 Navigator.push(
                                     context,
                                     PageTransition(
-                                      type: PageTransitionType
-                                          .rightToLeftWithFade,
+                                      type: PageTransitionType.rightToLeftWithFade,
                                       curve: Curves.easeInOut,
-                                      reverseDuration:
-                                          Duration(milliseconds: 300),
+                                      reverseDuration: Duration(milliseconds: 300),
                                       duration: Duration(milliseconds: 300),
                                       child: ResetPasswordPage(),
                                     ));
@@ -259,8 +252,7 @@ class _LoginPageState extends State<LoginPage> {
                       GestureDetector(
                         onTap: () {
                           final String email = emailController.text.trim();
-                          final String password =
-                              passwordController.text.trim();
+                          final String password = passwordController.text.trim();
                           if (email.isEmpty & password.isEmpty) {
                             showErrorSnackBar(
                               "Email và Password không được để trống",
@@ -369,9 +361,7 @@ class _LoginPageState extends State<LoginPage> {
       if (e.toString().indexOf("The email address is badly formatted.") != -1) {
         showErrorSnackBar("Vui lòng nhập đúng định dạng Email.", context);
       }
-      if (e.toString().indexOf(
-              "The password is invalid or the user does not have a password.") !=
-          -1) {
+      if (e.toString().indexOf("The password is invalid or the user does not have a password.") != -1) {
         showErrorSnackBar("Mật khẩu bạn đã nhập không chính xác.", context);
       } else {
         print(e.toString());

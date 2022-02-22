@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants/textstyle.dart';
 import '../models/monhoc.dart';
 
-final listS = <monhoc>[
-  python,
-  python_nangcao,
-  reactjs,
-  reactjs_nangcao,
-  nodejs,
-  nodejs_nangcao
-];
+final listS = <monhoc>[python, python_nangcao, reactjs, reactjs_nangcao, nodejs, nodejs_nangcao];
 
 class LessonPage extends StatefulWidget {
   int index, index2;
@@ -49,14 +42,11 @@ class LessonScreen extends State<LessonPage> {
         children: [
           CustomScrollView(
             controller: _scrollController,
-            physics:
-                BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
             slivers: [
               SliverAppBar(
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30))),
+                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30))),
                 backgroundColor: Color(0xffe87cac),
                 expandedHeight: 220,
                 floating: true,
@@ -72,8 +62,7 @@ class LessonScreen extends State<LessonPage> {
                         opacity: 0.3,
                         child: Container(
                           margin: EdgeInsets.only(left: 14),
-                          decoration: BoxDecoration(
-                              color: Colors.black, shape: BoxShape.circle),
+                          decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
                         ),
                       ),
                       Container(
@@ -140,8 +129,7 @@ class LessonScreen extends State<LessonPage> {
                           physics: NeverScrollableScrollPhysics(),
                           scrollDirection: Axis.vertical,
                           shrinkWrap: true,
-                          itemCount:
-                              listS[index].cacbaigiang[index].mucnho.length,
+                          itemCount: listS[index].cacbaigiang[index].mucnho.length,
                           itemBuilder: (context, i) {
                             return Container(
                               child: Column(
@@ -158,11 +146,8 @@ class LessonScreen extends State<LessonPage> {
                                   ),
                                   Padding(
                                     padding: EdgeInsets.only(top: 10),
-                                    child: Text(
-                                        listS[index]
-                                            .cacbaigiang[index2]
-                                            .noidungvd[i],
-                                        style: kStyleExampleTitle),
+                                    child:
+                                        Text(listS[index].cacbaigiang[index2].noidungvd[i], style: kStyleExampleTitle),
                                   ),
                                   Container(
                                     margin: EdgeInsets.only(top: 10),
@@ -173,8 +158,7 @@ class LessonScreen extends State<LessonPage> {
                                         borderRadius: BorderRadius.circular(10),
                                         border: Border.all(width: 0.4)),
                                     child: Container(
-                                      padding:
-                                          EdgeInsets.only(left: 12, right: 12),
+                                      padding: EdgeInsets.only(left: 12, right: 12),
                                       child: Row(
                                         children: [
                                           Text(
@@ -189,21 +173,16 @@ class LessonScreen extends State<LessonPage> {
                                           ),
                                           Padding(
                                             padding: EdgeInsets.only(left: 12),
-                                            child: Text(listS[index]
-                                                .cacbaigiang[index2]
-                                                .vidu[i]),
+                                            child: Text(listS[index].cacbaigiang[index2].vidu[i]),
                                           ),
                                         ],
                                       ),
                                     ),
                                   ),
                                   Padding(
-                                    padding:
-                                        EdgeInsets.only(top: 20, bottom: 10),
+                                    padding: EdgeInsets.only(top: 20, bottom: 10),
                                     child: Text(
-                                      listS[index]
-                                          .cacbaigiang[index]
-                                          .noidungketqua[i],
+                                      listS[index].cacbaigiang[index].noidungketqua[i],
                                       style: kStyleExampleTitle,
                                     ),
                                   ),
@@ -215,8 +194,7 @@ class LessonScreen extends State<LessonPage> {
                                         borderRadius: BorderRadius.circular(10),
                                         border: Border.all(width: 0.4)),
                                     child: Container(
-                                      padding:
-                                          EdgeInsets.only(left: 12, right: 12),
+                                      padding: EdgeInsets.only(left: 12, right: 12),
                                       child: IntrinsicHeight(
                                         child: Row(
                                           children: [
@@ -231,19 +209,12 @@ class LessonScreen extends State<LessonPage> {
                                               color: Color(0xfffe87cac),
                                             ),
                                             Padding(
-                                              padding:
-                                                  EdgeInsets.only(left: 12),
+                                              padding: EdgeInsets.only(left: 12),
                                               child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
-                                                  Text(listS[index]
-                                                      .cacbaigiang[index2]
-                                                      .ketqua[i]),
-                                                  Text(
-                                                      listS[index]
-                                                          .cacbaigiang[index2]
-                                                          .ketquaoutput[i],
+                                                  Text(listS[index].cacbaigiang[index2].ketqua[i]),
+                                                  Text(listS[index].cacbaigiang[index2].ketquaoutput[i],
                                                       style: kStyleOutput)
                                                 ],
                                               ),

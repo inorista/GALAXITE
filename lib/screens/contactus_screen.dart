@@ -33,9 +33,7 @@ class _ContactPageState extends State<ContactUsPage> {
     Future<void> _launchInApp(String url) async {
       if (await canLaunch(url)) {
         await launch(url,
-            forceSafariVC: true,
-            forceWebView: true,
-            headers: <String, String>{'header_key': 'header_value'});
+            forceSafariVC: true, forceWebView: true, headers: <String, String>{'header_key': 'header_value'});
       } else {
         throw "Không thế truy cập đường dẫn vào lúc này !";
       }
@@ -63,8 +61,7 @@ class _ContactPageState extends State<ContactUsPage> {
       body: Container(
         height: double.infinity,
         child: SingleChildScrollView(
-          physics:
-              BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -91,8 +88,7 @@ class _ContactPageState extends State<ContactUsPage> {
                     left: 30,
                     top: 30,
                     child: SafeArea(
-                      child: Text("Liên Hệ Với Chúng Tôi",
-                          style: kStyleContactHeader),
+                      child: Text("Liên Hệ Với Chúng Tôi", style: kStyleContactHeader),
                     ),
                   ),
                   Positioned(
@@ -148,8 +144,7 @@ class _ContactPageState extends State<ContactUsPage> {
                                 Container(
                                   padding: EdgeInsets.only(left: 14, right: 14),
                                   child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         "${_auth.currentUser.email}",
@@ -205,8 +200,7 @@ class _ContactPageState extends State<ContactUsPage> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset:
-                                  Offset(0, 2), // changes position of shadow
+                              offset: Offset(0, 2), // changes position of shadow
                             ),
                           ],
                         ),
@@ -224,13 +218,11 @@ class _ContactPageState extends State<ContactUsPage> {
                                     color: Colors.grey.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 5,
-                                    offset: Offset(
-                                        0, 1), // changes position of shadow
+                                    offset: Offset(0, 1), // changes position of shadow
                                   ),
                                 ],
                               ),
-                              child: Icon(FontAwesome5Brands.facebook_f,
-                                  color: Color(0xff3D548E), size: 32),
+                              child: Icon(FontAwesome5Brands.facebook_f, color: Color(0xff3D548E), size: 32),
                             ),
                             Text(
                               "Facebook",
@@ -254,8 +246,7 @@ class _ContactPageState extends State<ContactUsPage> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset:
-                                  Offset(0, 2), // changes position of shadow
+                              offset: Offset(0, 2), // changes position of shadow
                             ),
                           ],
                         ),
@@ -273,13 +264,11 @@ class _ContactPageState extends State<ContactUsPage> {
                                     color: Colors.grey.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 5,
-                                    offset: Offset(
-                                        0, 1), // changes position of shadow
+                                    offset: Offset(0, 1), // changes position of shadow
                                   ),
                                 ],
                               ),
-                              child: Icon(FontAwesome5Brands.instagram,
-                                  color: Color(0xffE34963), size: 32),
+                              child: Icon(FontAwesome5Brands.instagram, color: Color(0xffE34963), size: 32),
                             ),
                             Text(
                               "Instagram",
@@ -303,8 +292,7 @@ class _ContactPageState extends State<ContactUsPage> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset:
-                                  Offset(0, 2), // changes position of shadow
+                              offset: Offset(0, 2), // changes position of shadow
                             ),
                           ],
                         ),
@@ -322,13 +310,11 @@ class _ContactPageState extends State<ContactUsPage> {
                                     color: Colors.grey.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 5,
-                                    offset: Offset(
-                                        0, 1), // changes position of shadow
+                                    offset: Offset(0, 1), // changes position of shadow
                                   ),
                                 ],
                               ),
-                              child: Icon(FontAwesome5Brands.twitter,
-                                  color: Color(0xff1D9BF0), size: 32),
+                              child: Icon(FontAwesome5Brands.twitter, color: Color(0xff1D9BF0), size: 32),
                             ),
                             Text(
                               "Twitter",
@@ -341,8 +327,7 @@ class _ContactPageState extends State<ContactUsPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        _SMSPhone(
-                            "sms:+84 768696569?body=Bạn cần giúp đỡ điều gì ?");
+                        _SMSPhone("sms:+84 768696569?body=Bạn cần giúp đỡ điều gì ?");
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -353,8 +338,7 @@ class _ContactPageState extends State<ContactUsPage> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 5,
-                              offset:
-                                  Offset(0, 2), // changes position of shadow
+                              offset: Offset(0, 2), // changes position of shadow
                             ),
                           ],
                         ),
@@ -372,13 +356,11 @@ class _ContactPageState extends State<ContactUsPage> {
                                     color: Colors.grey.withOpacity(0.5),
                                     spreadRadius: 2,
                                     blurRadius: 5,
-                                    offset: Offset(
-                                        0, 1), // changes position of shadow
+                                    offset: Offset(0, 1), // changes position of shadow
                                   ),
                                 ],
                               ),
-                              child: Icon(FontAwesome5Solid.comment,
-                                  color: Color(0xff35D465), size: 32),
+                              child: Icon(FontAwesome5Solid.comment, color: Color(0xff35D465), size: 32),
                             ),
                             Text(
                               "Liên hệ qua SMS",
@@ -424,12 +406,9 @@ class _ContactPageState extends State<ContactUsPage> {
                 ),
                 child: GoogleMap(
                   mapType: MapType.terrain,
-                  onMapCreated: (GoogleMapController controller) {
-                    _controller.complete(controller);
-                  },
                   initialCameraPosition: CameraPosition(
                     target: LatLng(10.774314395933947, 106.68956296848974),
-                    zoom: 15,
+                    zoom: 17,
                   ),
                   markers: {
                     Marker(
@@ -437,9 +416,7 @@ class _ContactPageState extends State<ContactUsPage> {
                       position: LatLng(10.774314395933947, 106.68956296848974),
                       draggable: true,
                       infoWindow: InfoWindow(
-                          title: "Văn phòng GALAXITE",
-                          snippet:
-                              "254 Nguyễn Thị Minh Khai, Phường 6, Quận 3."),
+                          title: "Văn phòng GALAXITE", snippet: "254 Nguyễn Thị Minh Khai, Phường 6, Quận 3."),
                       icon: BitmapDescriptor.defaultMarker,
                     ),
                   },

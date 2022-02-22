@@ -6,14 +6,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-final listS = <monhoc>[
-  python,
-  python_nangcao,
-  reactjs,
-  reactjs_nangcao,
-  nodejs,
-  nodejs_nangcao
-];
+final listS = <monhoc>[python, python_nangcao, reactjs, reactjs_nangcao, nodejs, nodejs_nangcao];
 
 class BodyHome extends StatefulWidget {
   @override
@@ -33,8 +26,7 @@ class _BodyHomeState extends State<BodyHome> {
     return Container(
       child: Builder(
         builder: (context) => SingleChildScrollView(
-          physics:
-              BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
           child: Container(
             width: MediaQuery.of(context).size.width,
             child: Column(
@@ -63,10 +55,9 @@ class _BodyHomeState extends State<BodyHome> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Image(
-                            image: AssetImage("assets/images/logo.gif"),
-                            width: 160,
+                          Container(
                             height: 160,
+                            child: Center(child: Text("GALAXITE", style: kStyleHomeIntro)),
                           ),
                           AnimatedContainer(
                             margin: EdgeInsets.only(top: 54),
@@ -76,11 +67,8 @@ class _BodyHomeState extends State<BodyHome> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                               color: Color(0xfff5f5f5),
-                              border: Border.all(
-                                  width: 1.85,
-                                  color: borderColor
-                                      ? Color(0xffe97eae)
-                                      : Color(0xfffffff)),
+                              border:
+                                  Border.all(width: 1.85, color: borderColor ? Color(0xffe97eae) : Color(0xfffffff)),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -114,8 +102,7 @@ class _BodyHomeState extends State<BodyHome> {
                                       textAlign: TextAlign.left,
                                       maxLines: 1,
                                       decoration: InputDecoration.collapsed(
-                                          hintText: "Tìm kiếm khóa học...",
-                                          hintStyle: TextStyle(fontSize: 14)),
+                                          hintText: "Tìm kiếm khóa học...", hintStyle: TextStyle(fontSize: 14)),
                                     ),
                                   ),
                                 ),
@@ -160,10 +147,7 @@ class _BodyHomeState extends State<BodyHome> {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => null));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => null));
                                   },
                                   child: Text(
                                     "Xem tất cả",
@@ -189,25 +173,12 @@ class _BodyHomeState extends State<BodyHome> {
                         margin: EdgeInsets.only(left: 14, right: 14),
                         child: ListView(
                           scrollDirection: Axis.horizontal,
-                          physics: BouncingScrollPhysics(
-                              parent: AlwaysScrollableScrollPhysics()),
+                          physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                           children: [
                             for (int i = 0; i < listS.length; i++)
                               if (listS[i].status == 0)
                                 GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        PageTransition(
-                                          type: PageTransitionType
-                                              .rightToLeftWithFade,
-                                          curve: Curves.easeInOut,
-                                          reverseDuration:
-                                              Duration(milliseconds: 300),
-                                          duration: Duration(milliseconds: 300),
-                                          child: DetailPage(i),
-                                        ));
-                                  },
+                                  onTap: () {},
                                   child: Stack(
                                     children: [
                                       Container(
@@ -215,8 +186,7 @@ class _BodyHomeState extends State<BodyHome> {
                                         margin: EdgeInsets.only(left: 12),
                                         decoration: BoxDecoration(
                                           color: Color(0xffe2eeec),
-                                          borderRadius:
-                                              BorderRadius.circular(20),
+                                          borderRadius: BorderRadius.circular(20),
                                         ),
                                         child: Column(
                                           children: [
@@ -239,8 +209,7 @@ class _BodyHomeState extends State<BodyHome> {
                                               width: 300,
                                               padding: EdgeInsets.all(12),
                                               child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                                mainAxisAlignment: MainAxisAlignment.center,
                                                 children: [
                                                   Row(
                                                     children: [
@@ -248,64 +217,39 @@ class _BodyHomeState extends State<BodyHome> {
                                                         listS[i].tenmonhoc,
                                                         style: kStyleTitle,
                                                       ),
-                                                      if (listS[i]
-                                                              .cacbaigiang ==
-                                                          null)
+                                                      if (listS[i].cacbaigiang == null)
                                                         Container(
-                                                          margin: EdgeInsets
-                                                              .symmetric(
-                                                                  horizontal:
-                                                                      5),
+                                                          margin: EdgeInsets.symmetric(horizontal: 5),
                                                           width: 5,
                                                           height: 5,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0xff7e7e7e),
-                                                            shape:
-                                                                BoxShape.circle,
+                                                          decoration: BoxDecoration(
+                                                            color: Color(0xff7e7e7e),
+                                                            shape: BoxShape.circle,
                                                           ),
                                                         ),
-                                                      if (listS[i]
-                                                              .cacbaigiang !=
-                                                          null)
+                                                      if (listS[i].cacbaigiang != null)
                                                         Container(
-                                                          margin: EdgeInsets
-                                                              .symmetric(
-                                                                  horizontal:
-                                                                      5),
+                                                          margin: EdgeInsets.symmetric(horizontal: 5),
                                                           width: 5,
                                                           height: 5,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Color(
-                                                                0xffe97cac),
-                                                            shape:
-                                                                BoxShape.circle,
+                                                          decoration: BoxDecoration(
+                                                            color: Color(0xffe97cac),
+                                                            shape: BoxShape.circle,
                                                           ),
                                                         ),
-                                                      if (listS[i]
-                                                              .cacbaigiang ==
-                                                          null)
+                                                      if (listS[i].cacbaigiang == null)
                                                         Text(
                                                           "Khóa học chưa mở",
                                                           style: kStyleViewAll,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
+                                                          overflow: TextOverflow.ellipsis,
                                                         ),
-                                                      if (listS[i]
-                                                              .cacbaigiang !=
-                                                          null)
+                                                      if (listS[i].cacbaigiang != null)
                                                         Text(
                                                           "Gồm " +
-                                                              listS[i]
-                                                                  .cacbaigiang
-                                                                  .length
-                                                                  .toString() +
+                                                              listS[i].cacbaigiang.length.toString() +
                                                               " bài giảng",
                                                           style: kStyleViewAll,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
+                                                          overflow: TextOverflow.ellipsis,
                                                         ),
                                                     ],
                                                   ),
@@ -314,15 +258,12 @@ class _BodyHomeState extends State<BodyHome> {
                                                   ),
                                                   Row(
                                                     children: [
-                                                      if (listS[i].tghoc !=
-                                                          null)
+                                                      if (listS[i].tghoc != null)
                                                         Text(
-                                                          "Hoàn thành trong " +
-                                                              listS[i].tghoc,
+                                                          "Hoàn thành trong " + listS[i].tghoc,
                                                           style: kStyleViewAll,
                                                         ),
-                                                      if (listS[i].tghoc ==
-                                                          null)
+                                                      if (listS[i].tghoc == null)
                                                         Text(
                                                           "Khóa học sẽ sớm được ra mắt",
                                                           style: kStyleViewAll,
@@ -346,12 +287,10 @@ class _BodyHomeState extends State<BodyHome> {
                                               width: 72,
                                               decoration: BoxDecoration(
                                                 color: Color(0xffFF4342),
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
+                                                borderRadius: BorderRadius.circular(20),
                                               ),
                                             ),
-                                            Text("Bắt đầu!",
-                                                style: kStyleStarted),
+                                            Text("Bắt đầu!", style: kStyleStarted),
                                           ],
                                         ),
                                       ),
@@ -386,10 +325,7 @@ class _BodyHomeState extends State<BodyHome> {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => null));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => null));
                                   },
                                   child: Text(
                                     "Xem tất cả",
@@ -411,25 +347,11 @@ class _BodyHomeState extends State<BodyHome> {
                               height: 250,
                               child: ListView(
                                 scrollDirection: Axis.horizontal,
-                                physics: BouncingScrollPhysics(
-                                    parent: AlwaysScrollableScrollPhysics()),
+                                physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                                 children: [
                                   for (int i = 0; i < listS.length; i++)
                                     GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            PageTransition(
-                                              type: PageTransitionType
-                                                  .rightToLeftWithFade,
-                                              curve: Curves.easeInOut,
-                                              reverseDuration:
-                                                  Duration(milliseconds: 300),
-                                              duration:
-                                                  Duration(milliseconds: 300),
-                                              child: DetailPage(i),
-                                            ));
-                                      },
+                                      onTap: () {},
                                       child: Stack(
                                         children: [
                                           Container(
@@ -437,8 +359,7 @@ class _BodyHomeState extends State<BodyHome> {
                                             margin: EdgeInsets.only(left: 12),
                                             decoration: BoxDecoration(
                                               color: Color(0xffe2eeec),
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
+                                              borderRadius: BorderRadius.circular(20),
                                             ),
                                             child: Column(
                                               children: [
@@ -446,12 +367,9 @@ class _BodyHomeState extends State<BodyHome> {
                                                   height: 180,
                                                   width: 300,
                                                   child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.only(
-                                                      topLeft:
-                                                          Radius.circular(20),
-                                                      topRight:
-                                                          Radius.circular(20),
+                                                    borderRadius: BorderRadius.only(
+                                                      topLeft: Radius.circular(20),
+                                                      topRight: Radius.circular(20),
                                                     ),
                                                     child: Image.asset(
                                                       listS[i].anhmonhoc,
@@ -464,9 +382,7 @@ class _BodyHomeState extends State<BodyHome> {
                                                   width: 300,
                                                   padding: EdgeInsets.all(12),
                                                   child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .center,
+                                                    mainAxisAlignment: MainAxisAlignment.center,
                                                     children: [
                                                       Row(
                                                         children: [
@@ -474,68 +390,39 @@ class _BodyHomeState extends State<BodyHome> {
                                                             listS[i].tenmonhoc,
                                                             style: kStyleTitle,
                                                           ),
-                                                          if (listS[i]
-                                                                  .cacbaigiang ==
-                                                              null)
+                                                          if (listS[i].cacbaigiang == null)
                                                             Container(
-                                                              margin: EdgeInsets
-                                                                  .symmetric(
-                                                                      horizontal:
-                                                                          5),
+                                                              margin: EdgeInsets.symmetric(horizontal: 5),
                                                               width: 5,
                                                               height: 5,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: Color(
-                                                                    0xff7e7e7e),
-                                                                shape: BoxShape
-                                                                    .circle,
+                                                              decoration: BoxDecoration(
+                                                                color: Color(0xff7e7e7e),
+                                                                shape: BoxShape.circle,
                                                               ),
                                                             ),
-                                                          if (listS[i]
-                                                                  .cacbaigiang !=
-                                                              null)
+                                                          if (listS[i].cacbaigiang != null)
                                                             Container(
-                                                              margin: EdgeInsets
-                                                                  .symmetric(
-                                                                      horizontal:
-                                                                          5),
+                                                              margin: EdgeInsets.symmetric(horizontal: 5),
                                                               width: 5,
                                                               height: 5,
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: Color(
-                                                                    0xffe97cac),
-                                                                shape: BoxShape
-                                                                    .circle,
+                                                              decoration: BoxDecoration(
+                                                                color: Color(0xffe97cac),
+                                                                shape: BoxShape.circle,
                                                               ),
                                                             ),
-                                                          if (listS[i]
-                                                                  .cacbaigiang ==
-                                                              null)
+                                                          if (listS[i].cacbaigiang == null)
                                                             Text(
                                                               "Khóa học chưa mở",
-                                                              style:
-                                                                  kStyleViewAll,
-                                                              overflow:
-                                                                  TextOverflow
-                                                                      .ellipsis,
+                                                              style: kStyleViewAll,
+                                                              overflow: TextOverflow.ellipsis,
                                                             ),
-                                                          if (listS[i]
-                                                                  .cacbaigiang !=
-                                                              null)
+                                                          if (listS[i].cacbaigiang != null)
                                                             Text(
                                                               "Gồm " +
-                                                                  listS[i]
-                                                                      .cacbaigiang
-                                                                      .length
-                                                                      .toString() +
+                                                                  listS[i].cacbaigiang.length.toString() +
                                                                   " bài giảng",
-                                                              style:
-                                                                  kStyleViewAll,
-                                                              overflow:
-                                                                  TextOverflow
-                                                                      .ellipsis,
+                                                              style: kStyleViewAll,
+                                                              overflow: TextOverflow.ellipsis,
                                                             ),
                                                         ],
                                                       ),
@@ -544,21 +431,15 @@ class _BodyHomeState extends State<BodyHome> {
                                                       ),
                                                       Row(
                                                         children: [
-                                                          if (listS[i].tghoc !=
-                                                              null)
+                                                          if (listS[i].tghoc != null)
                                                             Text(
-                                                              "Hoàn thành trong " +
-                                                                  listS[i]
-                                                                      .tghoc,
-                                                              style:
-                                                                  kStyleViewAll,
+                                                              "Hoàn thành trong " + listS[i].tghoc,
+                                                              style: kStyleViewAll,
                                                             ),
-                                                          if (listS[i].tghoc ==
-                                                              null)
+                                                          if (listS[i].tghoc == null)
                                                             Text(
                                                               "Khóa học sẽ sớm được ra mắt",
-                                                              style:
-                                                                  kStyleViewAll,
+                                                              style: kStyleViewAll,
                                                             ),
                                                         ],
                                                       )
@@ -579,13 +460,10 @@ class _BodyHomeState extends State<BodyHome> {
                                                   width: 72,
                                                   decoration: BoxDecoration(
                                                     color: Color(0xffFF4342),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            20),
+                                                    borderRadius: BorderRadius.circular(20),
                                                   ),
                                                 ),
-                                                Text("Bắt đầu!",
-                                                    style: kStyleStarted),
+                                                Text("Bắt đầu!", style: kStyleStarted),
                                               ],
                                             ),
                                           ),
@@ -623,10 +501,7 @@ class _BodyHomeState extends State<BodyHome> {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => null));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => null));
                                   },
                                   child: Text(
                                     "Xem tất cả",
@@ -648,26 +523,12 @@ class _BodyHomeState extends State<BodyHome> {
                               height: 250,
                               child: ListView(
                                 scrollDirection: Axis.horizontal,
-                                physics: BouncingScrollPhysics(
-                                    parent: AlwaysScrollableScrollPhysics()),
+                                physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                                 children: [
                                   for (int i = 0; i < listS.length; i++)
                                     if (listS[i].cacbaigiang == null)
                                       GestureDetector(
-                                        onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              PageTransition(
-                                                type: PageTransitionType
-                                                    .rightToLeftWithFade,
-                                                curve: Curves.easeInOut,
-                                                reverseDuration:
-                                                    Duration(milliseconds: 300),
-                                                duration:
-                                                    Duration(milliseconds: 300),
-                                                child: DetailPage(i),
-                                              ));
-                                        },
+                                        onTap: () {},
                                         child: Stack(
                                           children: [
                                             Container(
@@ -675,8 +536,7 @@ class _BodyHomeState extends State<BodyHome> {
                                               margin: EdgeInsets.only(left: 12),
                                               decoration: BoxDecoration(
                                                 color: Color(0xffe2eeec),
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
+                                                borderRadius: BorderRadius.circular(20),
                                               ),
                                               child: Column(
                                                 children: [
@@ -684,12 +544,9 @@ class _BodyHomeState extends State<BodyHome> {
                                                     height: 180,
                                                     width: 300,
                                                     child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.only(
-                                                        topLeft:
-                                                            Radius.circular(20),
-                                                        topRight:
-                                                            Radius.circular(20),
+                                                      borderRadius: BorderRadius.only(
+                                                        topLeft: Radius.circular(20),
+                                                        topRight: Radius.circular(20),
                                                       ),
                                                       child: Image.asset(
                                                         listS[i].anhmonhoc,
@@ -702,80 +559,47 @@ class _BodyHomeState extends State<BodyHome> {
                                                     width: 300,
                                                     padding: EdgeInsets.all(12),
                                                     child: Column(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
+                                                      mainAxisAlignment: MainAxisAlignment.center,
                                                       children: [
                                                         Row(
                                                           children: [
                                                             Text(
-                                                              listS[i]
-                                                                  .tenmonhoc,
-                                                              style:
-                                                                  kStyleTitle,
+                                                              listS[i].tenmonhoc,
+                                                              style: kStyleTitle,
                                                             ),
-                                                            if (listS[i]
-                                                                    .cacbaigiang ==
-                                                                null)
+                                                            if (listS[i].cacbaigiang == null)
                                                               Container(
-                                                                margin: EdgeInsets
-                                                                    .symmetric(
-                                                                        horizontal:
-                                                                            5),
+                                                                margin: EdgeInsets.symmetric(horizontal: 5),
                                                                 width: 5,
                                                                 height: 5,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: Color(
-                                                                      0xff7e7e7e),
-                                                                  shape: BoxShape
-                                                                      .circle,
+                                                                decoration: BoxDecoration(
+                                                                  color: Color(0xff7e7e7e),
+                                                                  shape: BoxShape.circle,
                                                                 ),
                                                               ),
-                                                            if (listS[i]
-                                                                    .cacbaigiang !=
-                                                                null)
+                                                            if (listS[i].cacbaigiang != null)
                                                               Container(
-                                                                margin: EdgeInsets
-                                                                    .symmetric(
-                                                                        horizontal:
-                                                                            5),
+                                                                margin: EdgeInsets.symmetric(horizontal: 5),
                                                                 width: 5,
                                                                 height: 5,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: Color(
-                                                                      0xffe97cac),
-                                                                  shape: BoxShape
-                                                                      .circle,
+                                                                decoration: BoxDecoration(
+                                                                  color: Color(0xffe97cac),
+                                                                  shape: BoxShape.circle,
                                                                 ),
                                                               ),
-                                                            if (listS[i]
-                                                                    .cacbaigiang ==
-                                                                null)
+                                                            if (listS[i].cacbaigiang == null)
                                                               Text(
                                                                 "Khóa học chưa mở",
-                                                                style:
-                                                                    kStyleViewAll,
-                                                                overflow:
-                                                                    TextOverflow
-                                                                        .ellipsis,
+                                                                style: kStyleViewAll,
+                                                                overflow: TextOverflow.ellipsis,
                                                               ),
-                                                            if (listS[i]
-                                                                    .cacbaigiang !=
-                                                                null)
+                                                            if (listS[i].cacbaigiang != null)
                                                               Text(
                                                                 "Gồm " +
-                                                                    listS[i]
-                                                                        .cacbaigiang
-                                                                        .length
-                                                                        .toString() +
+                                                                    listS[i].cacbaigiang.length.toString() +
                                                                     " bài giảng",
-                                                                style:
-                                                                    kStyleViewAll,
-                                                                overflow:
-                                                                    TextOverflow
-                                                                        .ellipsis,
+                                                                style: kStyleViewAll,
+                                                                overflow: TextOverflow.ellipsis,
                                                               ),
                                                           ],
                                                         ),
@@ -784,23 +608,15 @@ class _BodyHomeState extends State<BodyHome> {
                                                         ),
                                                         Row(
                                                           children: [
-                                                            if (listS[i]
-                                                                    .tghoc !=
-                                                                null)
+                                                            if (listS[i].tghoc != null)
                                                               Text(
-                                                                "Hoàn thành trong " +
-                                                                    listS[i]
-                                                                        .tghoc,
-                                                                style:
-                                                                    kStyleViewAll,
+                                                                "Hoàn thành trong " + listS[i].tghoc,
+                                                                style: kStyleViewAll,
                                                               ),
-                                                            if (listS[i]
-                                                                    .tghoc ==
-                                                                null)
+                                                            if (listS[i].tghoc == null)
                                                               Text(
                                                                 "Khóa học sẽ sớm được ra mắt",
-                                                                style:
-                                                                    kStyleViewAll,
+                                                                style: kStyleViewAll,
                                                               ),
                                                           ],
                                                         )
@@ -821,13 +637,10 @@ class _BodyHomeState extends State<BodyHome> {
                                                     width: 72,
                                                     decoration: BoxDecoration(
                                                       color: Color(0xffFF4342),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              20),
+                                                      borderRadius: BorderRadius.circular(20),
                                                     ),
                                                   ),
-                                                  Text("Bắt đầu!",
-                                                      style: kStyleStarted),
+                                                  Text("Bắt đầu!", style: kStyleStarted),
                                                 ],
                                               ),
                                             ),

@@ -82,6 +82,7 @@ flutter:
         - asset: assets/fonts/Raleway-Medium.ttf 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/images/language/
     - assets/images/python/
     - assets/images/
     - assets/icons/

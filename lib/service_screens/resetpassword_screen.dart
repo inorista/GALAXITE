@@ -87,8 +87,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     children: [
                       Container(
                         padding: EdgeInsets.all(30),
-                        child: Text("Yêu Cầu Lấy Lại Mật Khẩu",
-                            style: kStyleLogText),
+                        child: Text("Yêu Cầu Lấy Lại Mật Khẩu", style: kStyleLogText),
                       ),
                       AnimatedContainer(
                         padding: EdgeInsets.only(top: 14, bottom: 14),
@@ -99,9 +98,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
                             width: borderWidth ? 1.5 : 1,
-                            color: borderColor
-                                ? Color(0xff3e4680)
-                                : Color(0xff8c8c8c),
+                            color: borderColor ? Color(0xff3e4680) : Color(0xff8c8c8c),
                           ),
                         ),
                         child: Row(
@@ -141,8 +138,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                   textAlign: TextAlign.left,
                                   maxLines: 1,
                                   decoration: InputDecoration.collapsed(
-                                    hintText:
-                                        "Nhập vào Email cần lấy lại mật khẩu...",
+                                    hintText: "Nhập vào Email cần lấy lại mật khẩu...",
                                     hintStyle: TextStyle(
                                       fontSize: 13,
                                       color: Color(0xff8c8c8c),
@@ -168,8 +164,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                         },
                         child: AnimatedContainer(
                           padding: EdgeInsets.only(top: 14, bottom: 14),
-                          margin:
-                              EdgeInsets.only(left: 40, right: 40, top: 199),
+                          margin: EdgeInsets.only(left: 40, right: 40, top: 199),
                           width: width,
                           duration: Duration(milliseconds: 800),
                           decoration: BoxDecoration(
@@ -234,11 +229,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
       await _auth.sendPasswordResetEmail(email: email);
       showSuccessSnackBar("Đã gửi yêu cầu đến email $email", context);
     } catch (e) {
-      if (e.toString().indexOf(
-              "There is no user record corresponding to this identifier. The user may have been deleted.") !=
+      if (e
+              .toString()
+              .indexOf("There is no user record corresponding to this identifier. The user may have been deleted.") !=
           1) {
-        showErrorSnackBar(
-            "Email chưa từng được đăng ký trên hệ thống", context);
+        showErrorSnackBar("Email chưa từng được đăng ký trên hệ thống", context);
       }
     }
   }

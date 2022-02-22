@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:travel/body_screens/home_body.dart';
+import 'package:travel/screens/aboutus_screen.dart';
 import 'package:travel/screens/contactus_screen.dart';
 import 'package:travel/screens/detail_screen.dart';
 import 'package:travel/screens/search_screen.dart';
@@ -12,14 +13,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:animations/animations.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 
-final listS = <monhoc>[
-  python,
-  python_nangcao,
-  reactjs,
-  reactjs_nangcao,
-  nodejs,
-  nodejs_nangcao
-];
+final listS = <monhoc>[python, python_nangcao, reactjs, reactjs_nangcao, nodejs, nodejs_nangcao];
 
 class Home extends StatefulWidget {
   @override
@@ -73,82 +67,82 @@ class HomeScreen extends State<Home> {
                   ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child:
-                        Text(_auth.currentUser.email, style: kStyleDrawerEmail),
+                    child: Text(_auth.currentUser.email, style: kStyleDrawerEmail),
                   ),
                 ],
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(width: 0.1, color: Colors.black),
-                ),
-              ),
-              child: ListTile(
-                leading: Icon(
-                  FontAwesome5Solid.users,
-                  color: Colors.black.withOpacity(0.8),
-                  size: 22,
-                ),
-                title: Text("Về chúng tôi", style: kStyleListTitle),
-                trailing: Icon(
-                  FontAwesome5Solid.arrow_right,
-                  color: Color(0xffe87cac),
-                  size: 14,
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(width: 0.1, color: Colors.black),
-                ),
-              ),
-              child: ListTile(
-                leading: Icon(
-                  FontAwesome5Solid.users,
-                  color: Colors.black.withOpacity(0.8),
-                  size: 22,
-                ),
-                title: Text("Về nhà phát triển", style: kStyleListTitle),
-                trailing: Icon(
-                  FontAwesome5Solid.arrow_right,
-                  color: Color(0xffe87cac),
-                  size: 14,
-                ),
-              ),
-            ),
             GestureDetector(
               onTap: () {
-                Signout(context);
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    type: PageTransitionType.bottomToTop,
+                    curve: Curves.easeInOut,
+                    reverseDuration: Duration(milliseconds: 300),
+                    duration: Duration(milliseconds: 300),
+                    child: AboutUsPage(),
+                  ),
+                );
               },
-              child: AnimatedContainer(
-                padding: EdgeInsets.only(top: 10, bottom: 10),
-                margin: EdgeInsets.only(left: 40, right: 40, top: 50),
-                width: width,
-                duration: Duration(milliseconds: 800),
+              child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color(0xff3e4680),
-                  border: Border.all(
-                    width: 1.5,
-                    color: Color(0xff3e4680),
+                  border: Border(
+                    bottom: BorderSide(width: 0.1, color: Colors.black),
                   ),
                 ),
-                child: Text(
-                  "Đăng Xuất",
-                  style: kStyleButtonLogout,
-                  textAlign: TextAlign.center,
+                child: ListTile(
+                  leading: Icon(
+                    FontAwesome5Solid.users,
+                    color: Colors.black.withOpacity(0.8),
+                    size: 22,
+                  ),
+                  title: Text("Về nhà phát triển", style: kStyleListTitle),
+                  trailing: Icon(
+                    FontAwesome5Solid.arrow_right,
+                    color: Color(0xffe87cac),
+                    size: 14,
+                  ),
                 ),
+              ),
+            ),
+            Container(
+              height: 500,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Signout(context);
+                    },
+                    child: AnimatedContainer(
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
+                      margin: EdgeInsets.only(left: 40, right: 40, top: 50),
+                      width: width,
+                      duration: Duration(milliseconds: 800),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Color(0xff3e4680),
+                        border: Border.all(
+                          width: 1.5,
+                          color: Color(0xff3e4680),
+                        ),
+                      ),
+                      child: Text(
+                        "Đăng Xuất",
+                        style: kStyleButtonLogout,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
         ),
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-            border: Border(top: BorderSide(color: Colors.black, width: 0.1))),
+        decoration: BoxDecoration(border: Border(top: BorderSide(color: Colors.black, width: 0.1))),
         child: BottomNavigationBar(
           backgroundColor: Color(0xfff6f6f6),
           selectedIconTheme: IconThemeData(
@@ -165,6 +159,8 @@ class HomeScreen extends State<Home> {
             });
           },
           type: BottomNavigationBarType.fixed,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
           items: [
             BottomNavigationBarItem(
               icon: Icon(
@@ -195,8 +191,7 @@ class HomeScreen extends State<Home> {
       ),
       resizeToAvoidBottomInset: false,
       body: PageTransitionSwitcher(
-        transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
-            FadeThroughTransition(
+        transitionBuilder: (child, primaryAnimation, secondaryAnimation) => FadeThroughTransition(
           animation: primaryAnimation,
           secondaryAnimation: secondaryAnimation,
           child: child,
