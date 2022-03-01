@@ -21,7 +21,7 @@ class AdminPage extends StatefulWidget {
 class _AdminPageState extends State<AdminPage> {
   final _auth = FirebaseAuth.instance;
   final db = FirebaseFirestore.instance.collection("khoahoc");
-  final listbaihoc = [bai00];
+  final listbaihoc = [bh03];
 
   @override
   Widget build(BuildContext context) {
@@ -171,8 +171,8 @@ class _AdminPageState extends State<AdminPage> {
                         onTap: () {
                           for (int i = 0; i < listbaihoc.length; i++) {
                             final data = listbaihoc[i];
-                            addBaihocAuto("python", data.id, data.anh, data.tieude, data.gioithieu, data.mucnho,
-                                data.noidungchinh, data.vidu, data.invidu, data.ketqua, data.inketqua, data.output);
+                            addBaihocAuto(data.ngonngu, data.id, data.tieude, data.anhbaihoc, data.giaithich,
+                                data.mucnho, data.noidung);
                           }
                         },
                         child: ClipRect(
@@ -248,21 +248,16 @@ class _AdminPageState extends State<AdminPage> {
     );
   }
 
-  void addBaihocAuto(String ngonngu, String id, String url, String tieude, String gioithieu, List mucnho,
-      List noidungchinh, List vidu, List invidu, List ketqua, List inketqua, List output) async {
+  void addBaihocAuto(
+      String ngonngu, String id, String tieude, String anhbaihoc, List giaithich, List mucnho, List noidung) async {
     try {
       await db.doc(ngonngu.toLowerCase()).collection("monhoc").doc("python_coban").collection("cacbaihoc").doc(id).set(
         {
-          "anhbaihoc": "assets/images/python/" + url + ".png",
+          "anhbaihoc": "assets/images/python_coban/${anhbaihoc}.png",
           "tieude": tieude,
-          "gioithieu": gioithieu,
+          "giaithich": giaithich,
           "mucnho": mucnho,
-          "noidungchinh": noidungchinh,
-          "vidu": vidu,
-          "invidu": invidu,
-          "ketqua": ketqua,
-          "inketqua": inketqua,
-          "output": output,
+          "noidung": noidung,
         },
       );
     } catch (e) {

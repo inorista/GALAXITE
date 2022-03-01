@@ -38,6 +38,7 @@ dependencies:
   animations: ^2.0.0
   eva_icons_flutter: ^3.0.2
   google_maps_flutter: ^2.1.1
+  flutter_swiper: ^1.1.6
   
   
 
@@ -83,7 +84,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/language/
-    - assets/images/python/
+    - assets/images/python_coban/
+    - assets/images/python_coban/bai01/
+    - assets/images/python_coban/bai02/
+    - assets/images/python_coban/bai03/
     - assets/images/
     - assets/icons/
     - assets/fonts/

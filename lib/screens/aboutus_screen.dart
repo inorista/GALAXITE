@@ -61,7 +61,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 55),
+                  margin: EdgeInsets.only(top: 50),
                   padding: EdgeInsets.only(left: 40, right: 40, bottom: 2),
                   child: Text("ABOUT GALAXITE", style: kStyleAboutUsTitle),
                 ),
@@ -73,7 +73,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   indent: 120,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 50),
+                  padding: EdgeInsets.only(top: 30),
                   child: ClipRect(
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),

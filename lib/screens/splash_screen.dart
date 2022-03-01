@@ -74,7 +74,7 @@ class _SplashScreenState extends State<SplashScreen> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             child: Image.asset(
-              "assets/images/splash_bg.gif",
+              "assets/images/splash_bg.png",
               fit: BoxFit.cover,
             ),
           ),

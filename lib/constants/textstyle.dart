@@ -63,9 +63,9 @@ const TextStyle kStyleKLessonDetailTitle_Expanded = TextStyle(
 
 const TextStyle kStyleFilteredTitle_Expanded = TextStyle(
   fontFamily: "Roboto_Bold",
-  fontSize: 13,
+  fontSize: 15,
   fontWeight: FontWeight.bold,
-  color: Colors.black,
+  color: Colors.white,
 );
 const TextStyle kStyleLessonDetailTitle = TextStyle(
   fontFamily: "Roboto_Bold",
@@ -306,4 +306,14 @@ var kStyleAdminItem = GoogleFonts.rowdies(
   fontSize: 18,
   fontWeight: FontWeight.w700,
   color: Colors.white,
+);
+var kStyleLessonTile = GoogleFonts.sourceCodePro(
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+  color: Color(0xff42B58D),
+);
+var kStyleLessonRichText = GoogleFonts.notoSans(
+  fontSize: 14,
+  fontWeight: FontWeight.w600,
+  color: Color(0xff0F162F),
 );

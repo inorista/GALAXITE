@@ -202,3 +202,85 @@ baihoc bai00 = new baihoc(
   inketqua: [],
   output: [],
 );
+
+class Baihoc {
+  final String tieude, id, anhbaihoc, ngonngu;
+  final List giaithich, mucnho, noidung;
+  Baihoc(
+      {@required this.tieude,
+      @required this.id,
+      @required this.anhbaihoc,
+      @required this.ngonngu,
+      @required this.giaithich,
+      @required this.mucnho,
+      @required this.noidung});
+}
+
+Baihoc bh02 = new Baihoc(
+  tieude: "Bài 02: Kiểu dữ liệu String (chuỗi) trong Python",
+  id: "bai02",
+  anhbaihoc: "bai02",
+  ngonngu: "python",
+  giaithich: [
+    "Để khai báo một biến dạng chuỗi ta phải đặt chuỗi trong dấu "
+        " hoặc dấu ' ' cả hai đều cho ra cùng một kết quả.\n\n Ở ví dụ trên ta đã khai báo hai biến gồm bienA và bienB. Với bienA ta khai báo với dấu "
+        " và bienB ta khai báo với dấu ' '.",
+    "Chuỗi trong Python được lưu trữ vào trong các ô nhớ với mỗi ô nhớ tương đương với một ký tự đơn (khác với các ngôn ngữ khác) và các ký tự này được xếp liên tiếp với nhau. Do đó kiểu dữ liệu chuỗi trong Python có thể được truy xuất đến từng ký tự trong nó.\n\nTa có thể thấy ở ví dụ trên ta đã truy xuất ra ký tự thứ [0] và [-1] trong chuỗi hoten.\n\nCú pháp sử dụng bao gồm:\n• string là tên tương ứng của một biến dạng chuỗi.\n• index là vị trí của ký tự mà bạn muốn truy xuất từ chuỗi đó.",
+    "Python không chỉ hỗ trợ bạn truy xuất một ký tự trong chuỗi mà còn hỗ trợ bạn truy xuất một đoạn chuỗi trong chuỗi",
+  ],
+  mucnho: [
+    "Khai báo một biến dạng chuỗi",
+    "Truy xuất một ký tự từ chuỗi",
+    "Truy xuất một đoạn chuỗi từ chuỗi",
+  ],
+  noidung: [
+    "assets/images/python_coban/bai02/00.png",
+    "assets/images/python_coban/bai02/01.png",
+    "assets/images/python_coban/bai02/02.png",
+  ],
+);
+Baihoc bh03 = new Baihoc(
+  tieude: "Bài 03: Kiểu dữ liệu số (number) trong Python",
+  id: "bai03",
+  anhbaihoc: "bai03",
+  ngonngu: "python",
+  giaithich: [
+    "Cũng giống như các ngôn ngữ lập trình khác, Python cũng có kiểu dữ liệu số (number). Nó dùng để lưu trữ hầu hết các kiểu về số như số thực, số phức, số nguyên. Trong Python hỗ trợ cho người dùng ba loại kiểu dữ liệu số:\n\n• int là kiểu số nguyên.\n• float là kiểu số thực.\n• complex là kiểu số phức. Kiểu số nguyên int và kiểu số thực float được phân biệt với nhau qua dấu chấm động (.), Nếu một số có dấu chấm động là kiểu số thực, còn một số không có dấu chấm động là kiểu số nguyên.\n\nVí dụ: a = 5 là kiểu số nguyên, trong khi a = 5.0 là kiểu số thực.\n\n",
+    "Trong Python ta có thể dễ dàng kiểm tra kiểu dữ liệu của một biến thông qua hàm type().\n\nỞ ví dụ trên ta thấy được dựa vào cách mà người dùng khai báo biến số, Python sẽ tự động hiểu được kiểu dữ liệu của biến đó là gì. ",
+    "Python cũng hỗ trợ người dùng thực hiện các phép toán tử số học để đưa vào tính toán các phép tính từ cơ bản đến phức tạp. Các phép toán tử số học mà Python hỗ trợ bao gồm: \n\n• Phép cộng (+) cộng các giá trị lại với nhau.\n• Phép trừ (-) trừ các giá trị với nhau.\n• Phép nhân (*) nhân các giá trị với nhau.\n• Phép chia (/) chia các giá trị cho nhau.\n•  Phép chia lấy phần dư (%) chia các giá chỉ lấy phần dư.\n• Phép chia làm tròn xuống (//)",
+    "Để thực hiện phép cộng số học trong Python và gán kết quả cho một biến khác ta thực hiện theo cú pháp: \n\n' bienGan = soA + soB '\n\nTrong đó: \n\n• bienGan là tên của biến ta cần gán kết quả giá trị của phép tính.\n• soA là tên biến của số hạng đầu tiên.\n• soB là tên biến của số hạng thứ hai.",
+    "Để thực hiện phép trừ số học trong Python và gán kết quả cho một biến khác ta thực hiện theo cú pháp: \n\n' bienGan = soA - soB '\n\nTrong đó: \n\n• bienGan là tên của biến ta cần gán kết quả giá trị của phép tính.\n• soA là tên biến của số cần trừ.\n• soB là tên biến của số bị trừ.",
+    "Để thực hiện phép nhân số học trong Python và gán kết quả cho một biến khác ta thực hiện theo cú pháp: \n\n' bienGan = soA * soB '\n\nTrong đó: \n\n• bienGan là tên của biến ta cần gán kết quả giá trị của phép tính.\n• soA là tên biến của thừa số đầu tiên.\n• soB là tên biến của thừa số thứ hai.",
+    "Để thực hiện phép chia số học trong Python và gán kết quả cho một biến khác ta thực hiện theo cú pháp: \n\n' bienGan = soA / soB '\n\nTrong đó: \n\n• bienGan là tên của biến ta cần gán kết quả giá trị của phép tính.\n• soA là tên biến của số cần chia.\n• soB là tên biến của số bị chia.",
+    "Để thực hiện phép chia làm tròn xuống số học trong Python và gán kết quả cho một biến khác ta thực hiện theo cú pháp: \n\n' bienGan = soA // soB '\n\nTrong đó: \n\n• bienGan là tên của biến ta cần gán kết quả giá trị của phép tính.\n• soA là tên biến của số cần chia.\n• soB là tên biến của số bị chia.",
+    "Để thực hiện phép chia lấy phần dư số học trong Python và gán kết quả cho một biến khác ta thực hiện theo cú pháp: \n\n' bienGan = soA % soB '\n\nTrong đó: \n\n• bienGan là tên của biến ta cần gán kết quả giá trị của phép tính.\n• soA là tên biến của số cần chia.\n• soB là tên biến của số bị chia.",
+    "Để thực hiện phép lũy thừa số học trong Python và gán kết quả cho một biến khác ta thực hiện theo cú pháp: \n\n' bienGan = soA ** soB '\n\nTrong đó: \n\n• bienGan là tên của biến ta cần gán kết quả giá trị của phép tính.\n• soA là tên biến của cơ số.\n• soB là tên biến của số mũ.",
+    "Trong Python cho phép chúng ta xóa đi giá trị của một biến, nhằm giải phóng bộ nhớ cho cho máy tính với lệnh 'del'. Cú pháp sử dụng: \n\nXóa một biến ' del tenBiencanXoa '\n\nXóa nhiều biến một lúc ' del tenBiencanXoa1, tenBiencanXoa2, tenBiencanXoa3 '",
+  ],
+  mucnho: [
+    "Các kiểu dữ liệu số",
+    "Hàm type()",
+    "Toán tử số học trong Python",
+    "Phép cộng (+)",
+    "Phép trừ (-)",
+    "Phép nhân (*)",
+    "Phép chia (/)",
+    "Phép chia làm tròn (//)",
+    "Phép chia lấy phần dư (%)",
+    "Phép lũy thừa (**)",
+    "Xóa giá trị của biến",
+  ],
+  noidung: [
+    "assets/images/python_coban/bai03/00.png",
+    "assets/images/python_coban/bai03/01.png",
+    "assets/images/python_coban/bai03/02.png",
+    "assets/images/python_coban/bai03/03.png",
+    "assets/images/python_coban/bai03/02.png",
+    "assets/images/python_coban/bai03/02.png",
+    "assets/images/python_coban/bai03/02.png",
+    "assets/images/python_coban/bai03/02.png",
+    "assets/images/python_coban/bai03/02.png",
+    "assets/images/python_coban/bai03/02.png",
+    "assets/images/python_coban/bai03/02.png",
+  ],
+);

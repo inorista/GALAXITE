@@ -180,7 +180,7 @@ class _FilteredPageState extends State<FilteredPage> {
         ],
         backgroundColor: isExpanded ? Colors.white : Colors.transparent,
         elevation: 0,
-        toolbarHeight: 40,
+        toolbarHeight: 50,
         title: isExpanded ? Text("Các môn học về ngôn ngữ ${ngonngu}", style: kStyleFilteredTitle_Expanded) : Text(""),
         centerTitle: true,
       ),

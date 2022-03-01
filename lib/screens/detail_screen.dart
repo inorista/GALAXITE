@@ -133,6 +133,7 @@ class _DetailPageState extends State<DetailPage> {
                                 "Môn học ${snapshot.data.docs[index]["tenmonhoc"]}",
                                 style: kStyleDetail_text,
                               ),
+                              Container(height: 10),
                               Divider(
                                 height: 6,
                                 thickness: 3,
