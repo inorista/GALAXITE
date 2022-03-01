@@ -114,11 +114,24 @@ class _LessonsPageState extends State<LessonsPage> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Icon(
-                                      EvaIcons.arrowIosBack,
-                                      size: 40,
-                                      color: Colors.white,
+                                    ClipRect(
+                                      child: BackdropFilter(
+                                        filter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
+                                        child: Container(
+                                          padding: EdgeInsets.all(5),
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(30),
+                                            color: Color(0xffe87cac).withOpacity(0.3),
+                                          ),
+                                          child: Icon(
+                                            EvaIcons.arrowIosBack,
+                                            size: 40,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
                                     ),
+                                    Container(height: 10),
                                     Text(
                                       "Trở lại trang đầu.",
                                       style: kStyleAdminItem,
